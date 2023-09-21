@@ -25,7 +25,7 @@ for event_entry in event_entries:
     print(opener)
 
     #Get Venue Name
-    venue = event_entry.find('span', class_="venue").text.strip()[2:]
+    venue = event_entry.find('span', class_="venue").text.strip()
     print(venue)
 
     #Get Show Date
@@ -41,7 +41,8 @@ for event_entry in event_entries:
     print(link)
 
     #Get Ticket Link
-    tickets = event_entry.find('')
+    tickets = event_entry.find('div', class_="buttons")
+    print(tickets.find('a')['href'])
 
     #Seperate on print
     print("\n")
